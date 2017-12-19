@@ -40,7 +40,9 @@ describe 'testing the demoqa registration page' do
     end
 
     it 'accept a new DOB' do
-
+      expect(@driver.dob_month_list_select('3')).to eq true
+      expect(@driver.dob_day_list_select('7')).to eq true
+      expect(@driver.dob_year_list_select('1995')).to eq true
     end
 
     it 'should accept a new country value' do

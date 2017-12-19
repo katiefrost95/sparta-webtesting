@@ -121,16 +121,37 @@ class SeleniumDemoReg
   # If no solution then a run through will happen once finished
 
   def dob_month_list_select(month_value)
-
-
+    month = @chrome_driver.find_element(:id,DOB_MONTH_DROPDOWN_LIST)
+    all_options = month.find_elements(:tag_name, "option")
+    all_options.each do|x|
+      if x.text == month_value
+        x.click
+      end
+      return x.selected?
+    end
   end
 
   def dob_day_list_select(day_value)
+    day = @chrome_driver.find_element(:id,DOB_DAY_DROPDOWN_LIST)
+    all_options = day.find_elements(:tag_name, "option")
+    all_options.each do|x|
+      if x.text == day_value
+        x.click
+      end
+      return x.selected?
+    end
 
   end
 
   def dob_year_list_select(year_value)
-
+    year = @chrome_driver.find_element(:id,DOB_YEAR_DROPDOWN_LIST)
+    all_options = year.find_elements(:tag_name, "option")
+    all_options.each do|x|
+      if x.text == year_value
+        x.click
+      end
+      return x.selected?
+    end
   end
 
 
