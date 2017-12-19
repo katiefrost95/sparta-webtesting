@@ -6,8 +6,6 @@ class SeleniumQatoolsForm
   PRACTICE_FORM_URL = 'http://toolsqa.com/automation-practice-form/'
   FIRST_NAME_FIELD_NAME = 'firstname'
   LAST_NAME_FIELD_NAME = 'lastname'
-  FEMALE_SEX_BUTTON = 'sex-1'
-  YEARS_EXPERIENCE_1 = 'exp-0'
   DATE_PICKER = 'datepicker'
   PROFESSION = 'profession-1'
   AUTOMATION_TOOL = 'tool-2'
@@ -31,11 +29,13 @@ class SeleniumQatoolsForm
   end
 
   def female_gender
-    @chrome_driver.find_element(:id, FEMALE_SEX_BUTTON).click
+    random_value = rand(0...1)
+    @chrome_driver.find_element(:id, "sex-#{random_value}").click
   end
 
   def experience
-    @chrome_driver.find_element(:id, YEARS_EXPERIENCE_1).click
+    random_value = rand(0...6)
+    @chrome_driver.find_element(:id, "exp-#{random_value}").click
   end
 
   def date_pick(text)
