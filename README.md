@@ -74,7 +74,7 @@ When writing you tests with capybara, as your testing the user experience you wr
       @bbc_site = BbcSite.new
       @bbc_site.bbc_homepage.visit_home_page
       @bbc_site.bbc_homepage.click_sign_in_link
-      @bbc_site.bbc_sign_in_page.fill_in_username("katie_frost95@hotmail.co.uk")
+      @bbc_site.bbc_sign_in_page.fill_in_username("kfro@hotmail.co.uk")
       @bbc_site.bbc_sign_in_page.fill_in_password("Hello12345")
       @bbc_site.bbc_sign_in_page.click_sign_in_button
       expect(@bbc_site.bbc_sign_in_page.incorrect_password_text).to eq('Uh oh, that password doesn’t match that account. Please try again.')
